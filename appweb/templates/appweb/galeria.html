@@ -1,0 +1,285 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en, es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Esteban Salinas, Franco Carvallo, David Lever" />
+    <meta name="description" content="Departamento de Bomberos de Chile: Institución nacional de Bomberos de Chile">
+    <meta name="keywords" content="Bomberos, Bomberos de Chile, Cuerpo de Bomberos, Departamento de Bomberos, Incendio, Rescate">
+    <link rel="icon" href="{% static 'appweb/favicon/favicon.png' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'appweb/css/stylegaleria.css' %}">
+
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+
+    <!--LINKS PARA EL FUNCIONAMIENTO DE LA PAGINA-->
+    <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <title> Galería | Bomberos de Chile</title>
+
+</head>
+
+<body>
+    <!--MENU DE NAVEGACION-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src="{% static 'appweb/logo/logo.png' %}" class="logobom"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbarToggler10" aria-controls="myNavbarToggler10" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="myNavbarToggler10">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'historia' %}">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'galeria' %}">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav sm-icons mr-0">
+                <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/BomberosCL/"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/bomberoschileoficial/?hl=es-la"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://twitter.com/BomberosdeChile"><i class="fab fa-twitter"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/user/BomberosOnline"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    <!------ AQUI TERMINA EL MENU ------->
+
+    <!------ AQUI COMIENZA EL CARRUSEL ------->
+    <main>
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <!--IMAGEN 1-->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'appweb/img/img_carousel_09.jpg' %}" alt="Carousel Image">
+                </div>
+
+                <!--IMAGEN 2-->
+                <div class="carousel-item">
+                    <img src="{% static 'appweb/img/img_carousel_02.jpg' %}" alt="Carousel Image">
+                </div>
+
+                <!--IMAGEN 3-->
+                <div class="carousel-item">
+                    <img src="{% static 'appweb/img/img_carousel_03.jpg' %}" alt="Carousel Image">
+                </div>
+            </div>
+            <!--FLECHAS IZQ. DER. DEL CARRUSEL -->
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </main>
+    <!-------- AQUI TERMINA EL CARRUSEL ------------------->
+
+
+    <!----------- BOTON SCROLL -------------->
+    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out" data-abc="true"></a>
+    <div class="height">
+    </div>
+    <!----------- TERMINO DEL SCROLL --------->
+
+
+    <!------------- AQUI COMIENZA EL BODY ---------------->
+    <div class="container">
+        <!-------------- IMAGEN Y TEXTO  --------------------------->
+        <div class="row">
+            <div class="col-md-6">
+                <br><br><br>
+                <img src="{% static 'appweb/img/img_gallery_01.jpg' %}" alt="" class="w-100" />
+                <br><br><br>
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="row align-items-center h-100">
+                    <div class="col">
+                        <h4 class="display-3">Galería </h4>
+                        <p class="lead">Aquí podrás ver algunas fotografías de nuestro equipo en acción.
+
+                            <div class="center">
+                                <div class="outer button">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!---------- TERMINO DEL PRIMER PARRAFO ------------->
+
+
+    <!---------- INICIO DE LA GALERIA -------------------->
+    <div class="rotatingGallery-parentContainer">
+        <div class="rotatingGallery">
+            <div class="rotatingGallery-slides">
+                <div class="rotatingGallery-slide" data-arrival-index="1">
+
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_09.jpg' %}" title="">
+
+                    <h2 class="rotatingGallery-text">
+                        Pruebas
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        Brigadista realizando pruebas físicas.
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="2">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_02.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        Mantenimiento
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        Aquí se puede apreciar como un integrante de nuestro equipo está probando la maquinaria. Debemos asegurarnos de que nuestras herramientas estén en estado óptimo.
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="3">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_03.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        Pedro
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        La persona con mas experiencia de todo el equipo.
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="4">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_04.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        Extinguiendo las llamas
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        Aunque las llamas hayan cesado, el lugar se debe asegurar de todas formas.
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="5">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_05.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        Grifo
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        Uno de los muchos grifos que utilizamos para apagar las llamas, se puede notar que está bastante usado.
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="6">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_06.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        Todo controlado
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="7">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_carousel_10.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        Uniformes listos
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        Siempre se debe estar listo para cualquier emergencia.
+                    </p>
+                </div>
+
+                <div class="rotatingGallery-slide" data-arrival-index="8">
+                    <img class="rotatingGallery-image" alt="" src="{% static 'appweb/img/img_gallery_08.jpg' %}">
+
+                    <h2 class="rotatingGallery-text">
+                        La joya
+                    </h2>
+
+                    <p class="rotatingGallery-text">
+                        Puede llevar diez ocupantes, capacidad de 4.000 lts. de agua.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <!------------- AQUI TERMINA EL BODY ----------------->
+
+
+    <!------------- INICIO DEL FOOTER --------------------->
+    <footer>
+        <div class="footer-bottom">
+            <div class="footer-bottom-copyright-text">
+                <img src="{% static 'appweb/logo/logo_blue.png' %}" class="logofooter" alt="">&copy; 2021 Bomberos de Chile | Todos los derechos reservados.
+            </div>
+
+            <div class="footer-bottom-social-icons">
+                <ul id="footer-social-links">
+                    <li><a href="https://www.facebook.com/BomberosCL/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/bomberoschileoficial/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/BomberosdeChile" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/BomberosOnline" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+                <div class="footer-bottom-site-credit"><span id="site-credit"></div>
+            </div>
+        </div>
+</footer>
+<!----------------- AQUI TERMINA EL FOOTER ------------------>
+
+    <!--SCRIPTS PARA EL FUNCIONAMIENTO DE LA PAGINA-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'appweb/js/scriptS1.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $(".toggle-nav").click(function() {
+                $(".menu ul li").slideToggle("slow");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

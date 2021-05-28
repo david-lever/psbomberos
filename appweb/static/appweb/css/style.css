@@ -1,0 +1,413 @@
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #000000;
+    /*tamaño de las letras*/
+    font-size: 1.5rem;
+    /* interlineado */
+    /*line-height: 1.6em;*/
+    margin: 0;
+}
+
+.container .display-3 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #002663;
+}
+
+h5 {
+    color: #006EB2;
+}
+
+.h-100 p {
+    font-weight: 400;
+}
+
+
+/*MENU DE NAVEGACION*/
+
+.navbar navbar-expand-lg navbar-light {
+    background: rgba(255, 255, 255, 0.67);
+    box-shadow: inset 0px 0px 60px rgba(193, 201, 222, 0.38);
+    backdrop-filter: blur(50px);
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #4b3bd6;
+    font-size: 1.1em;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    background: linear-gradient(143deg, #0026632c 18.75%, #e12d1d2f 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+}
+
+.navbar-collapse {
+    font-size: 20px;
+}
+
+.sm-icons {
+    flex-direction: row;
+}
+
+
+/*CONFIGURACION DE MENU RESPONSIVO
+  REPONSIVE
+  todas las caracteristicas que se mostraran a continuancion seran cuando tenga un ancho maximo de 767px */
+
+@media only screen and (max-width: 960px) {
+    .sm-icons .nav-item {
+        padding-right: 1em;
+    }
+}
+
+
+/*AJUSTE EL TAMAÑO DEL LOGO*/
+
+.logobom {
+    width: 58px;
+    height: 65.62px;
+    display: block;
+    margin: auto;
+    padding: 1px;
+}
+
+
+/*AQUI COMIENZA EL CARRUSEL*/
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 35em;
+    min-height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.carousel .carousel-inner,
+.carousel .carousel-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .carousel-item::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.carousel .carousel-caption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 170px);
+    min-height: 400px;
+}
+
+.carousel .carousel-caption .btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    transition: 0.3s;
+}
+
+.carousel .carousel-caption .btn:hover {
+    color: #030f27;
+    background: #faebd7;
+    border-color: #faebd7;
+}
+
+@media (max-width: 767.98px) {
+    .carousel .carousel-caption .btn {
+        padding: 12px 30px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .carousel .carousel-caption .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+}
+
+.carousel .animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+
+
+/********************************* BODY *************************************/
+
+
+/*esta es la clase de las fotos*/
+
+.w-100 {
+    margin: 30px 0;
+    border-radius: 4%;
+}
+
+
+/* ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ YouTube Video ☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰☰ */
+
+iframe {
+    border-radius: 13px;
+}
+
+
+/***********EMPIEZA EL EFECTO DEL BUTTON*******************************/
+
+.center {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer {
+    position: relative;
+    margin: 0 50px;
+    background: #111;
+}
+
+.button {
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+}
+
+.circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.outer button,
+.outer span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.outer button {
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    z-index: 9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.button button {
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+}
+
+.circle button {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.outer span {
+    height: 100%;
+    width: 100%;
+    background: inherit;
+}
+
+.button span {
+    border-radius: 50px;
+}
+
+.circle span {
+    border-radius: 50%;
+}
+
+.outer:hover span:nth-child(1) {
+    filter: blur(7px);
+}
+
+.outer:hover span:nth-child(2) {
+    filter: blur(14px);
+}
+
+.outer:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(0, 110, 178, 1), rgba(225, 44, 29, 1), rgba(201, 155, 6, 1));
+    animation: rotate 1.5s linear infinite;
+}
+
+
+/***********TERMINO DEL EFECTO DEL BUTTON*******************************/
+
+
+/********************************* TERMINO BODY ********************************/
+
+
+/********************************* SCROLL ***************************************/
+
+.scroll {
+    color: #fff;
+    margin-top: -30px;
+}
+
+#toTopBtn {
+    position: fixed;
+    bottom: 85px;
+    right: 39px;
+    z-index: 98;
+    padding: 21px;
+    border-radius: 50%;
+    background-color: #002663;
+}
+
+.js .cd-top--fade-out {
+    opacity: 0.5;
+}
+
+.js .cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.js .cd-top {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+}
+
+.cd-top {
+    position: fixed;
+    bottom: 20px;
+    bottom: var(--cd-back-to-top-margin);
+    right: 20px;
+    right: var(--cd-back-to-top-margin);
+    display: inline-block;
+    height: 40px;
+    height: var(--cd-back-to-top-size);
+    width: 40px;
+    width: var(--cd-back-to-top-size);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) !important;
+    background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1571057658/cd-top-arrow.svg) no-repeat center 50%;
+    background-color: hsla(5, 76%, 62%, 0.8);
+    background-color: hsla( var(--cd-color-3-h), var(--cd-color-3-s), var(--cd-color-3-l), 0.8);
+}
+
+
+/********************************* TERMINO SCROLL ********************************/
+
+
+/************ AQUI COMIENZA EL FOOTER **********************/
+
+footer {
+    font-family: 'raleway';
+    background-color: #eeeded;
+    min-width: 400px;
+    width: 100%;
+    text-align: center;
+    line-height: 35px;
+    height: 5.2em;
+    color: #002663;
+}
+
+footer a {
+    text-decoration: none;
+    color: #002663;
+    font-size: 20px;
+    padding: 2px;
+    border-radius: 50%;
+}
+
+.logofooter {
+    width: 58px;
+    height: 65.62px;
+    margin: 5px;
+}
+
+footer a:hover {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.178), rgba(0, 110, 178, 0.158), rgba(225, 45, 29, 0.158), rgba(201, 155, 6, 0.185));
+    animation: rotate 1.5s linear infinite;
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-bottom-copyright-text {
+        font-size: 80%;
+    }
+    .footer-bottom-social-icons {
+        font-size: 80%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .footer-bottom {
+        text-align: center;
+    }
+    .footer-bottom-copyright-text {
+        width: 100%;
+    }
+    .footer-bottom-social-icons {
+        background-color: #eeeeed;
+    }
+    #footer-social-links li {
+        list-style: none;
+        display: inline-block;
+        padding: 0px 10px;
+    }
+}
+
+@media only screen and (min-width: 961px) {
+    .footer-bottom {
+        text-align: left;
+    }
+    .footer-bottom-copyright-text {
+        max-width: 480px;
+        float: left;
+        padding: 10px 10px 0px 10px;
+        line-height: 60px;
+        height: 60px;
+    }
+    .footer-bottom-social-icons {
+        background-color: #eeeded;
+        text-align: right;
+        padding: 0px 10px;
+    }
+    #footer-social-links li {
+        list-style: none;
+        display: inline-block;
+        padding: 15px 10px 0px 10px;
+    }
+}
+
+
+/******** TERMINO DEL FOOTER ************/
