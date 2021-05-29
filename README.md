@@ -8,7 +8,7 @@ Task List
 
 - [x] Implementación del proyecto al ambiente de trabajo django
 - [ ] Creación del Backend
-  - [ ] Creación de app
-  - [ ] Creación de DB
+  - [ ] Creación de la app
+  - [ ] Creación de la DB
   - [ ] Creación del mantenedor
 
