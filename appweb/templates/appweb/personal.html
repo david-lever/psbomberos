@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="boostrap.min.css">
+
     <title> Integrantes | Bomberos de Chile</title>
 
 </head>
@@ -46,7 +46,7 @@
                     <a class="nav-link" href="{% url 'historia' %}l">Historia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    <a class="nav-link" href="{% url 'home' %}#nosotros">Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'galeria' %}">Galería</a>
@@ -121,7 +121,7 @@
             <div class="centrado">
                 <!-- partial:index.partial.html -->
                 <br>
-                <h3>Lista de integrantes de la compañia</h3>
+                <span><h3>Lista de integrantes de la compañia</h3></span>
             </div>
             <div class="list">
                 <ul>
@@ -152,22 +152,7 @@
     <!------------------------- TERMINO DE LA LISTA --------------------->
 
 
-    <!---------- AQUI COMIENZA EL FORMULARIO ---------->
-
-    <div class="row">
-        <form method="post" action="" id="formulario">
-            {% csrf_token %}
-            <div class="form_group">
-                {{ form.as_table }}
-            </div>
-            <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-            <input type="reset" class="btn btn-primary" id="limnpiar" value="Limpiar">
-            <div id="error" class="alert alert-success" role="alert">
-                {{ mensaje }}
-            </div>
-        </form>
-    </div>
-    <!----------- AQUI TERMINA EL FORMULARIO ---------->
+    <!-------------- MODIFICAR ---------------->
 
     <!------------- AQUI TERMINA EL BODY ----------------->
 
@@ -189,7 +174,7 @@
                 <div class="footer-bottom-site-credit"><span id="site-credit"></div>
             </div>
         </div>
-</footer>
+    </footer>
 <!----------------- AQUI TERMINA EL FOOTER ------------------>
 
     <!--SCRIPTS PARA EL FUNCIONAMIENTO DE LA PAGINA-->

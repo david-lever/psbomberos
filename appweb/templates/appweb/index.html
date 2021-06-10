@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="boostrap.min.css">
 
     <title>Inicio | Bomberos</title>
 </head>
@@ -40,7 +43,7 @@
                     <a class="nav-link" href="{% url 'historia' %}">Historia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    <a class="nav-link" href="#nosotros">Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'galeria' %}">Galería</a>
@@ -156,7 +159,7 @@
 
                 <div class="row align-items-center h-100">
                     <div class="col">
-                        <h5>ACERCA DE NOSOTROS</h5>
+                        <h5 id="nosotros">ACERCA DE NOSOTROS</h5>
                         <h3 class="display-3" id="nosotros">Nuestra Misión</h3>
                         <p class="lead">El objetivo de Bomberos de Chile, junto a los Cuerpos, es desarrollar un servicio voluntario bomberil eficiente, que garantice la seguridad de la vida y bienes de la ciudadanía ante incendios, desastres de la naturaleza, accidentes
                             vehiculares, emergencias con sustancias peligrosas y de otra índole, propios de su competencia.
@@ -178,8 +181,42 @@
 
         </div>
         <!-- /.row -->
-
     </div>
+    <br>
+    <br>
+
+    <!---------- AQUI COMIENZA EL FORMULARIO ---------->
+    <div class="row justify-content-center align-items-center centrado">
+        <div class="col-md-6">
+            <h3>Si quieres ser parte de nuestro equipo deja tus datos en el siguiente formulario</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="row justify-content-center align-items-center centrado">
+        <div class="col-11">
+            <form method="post" action="" id="formulario">
+                <br> {% csrf_token %}
+                <div class="form_group">
+
+                    {{ form.as_table }}
+
+                </div>
+                <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                <input type="reset" class="btn btn-primary" id="limnpiar" value="Limpiar">
+
+                <div id="error" class="alert alert-success" role="alert">
+
+                    {{ mensaje }}
+                </div>
+        </div>
+    </div>
+    </form>
+    <!----------- AQUI TERMINA EL FORMULARIO ---------->
+
+
     <br>
     <br>
     <br>

@@ -1,8 +1,13 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Personal
+from .models import Postulante, Personal
 
-class PersonalForm(ModelForm):
+class PostulanteForm(ModelForm):
     class Meta:
-        model = Personal
-        fields = ['rut', 'dv', 'pnombre', 'snombre', 'appaterno', 'apmaterno', 'fono', 'fecha_ing', 'cargo', 'compania', 'comuna']
+        model = Postulante
+        fields = ['rut', 'pnombre', 'snombre', 'appaterno', 'apmaterno', 'edad','nivel']
+
+#class PersonalForm():
+     #class Meta:
+        #model = Personal
+        #fields = ['rut', 'dv', 'pnombre', 'snombre', 'appaterno', 'apmaterno','cargo','compania', 'fono','comuna','fecha_ing']
