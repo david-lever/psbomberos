@@ -53,7 +53,7 @@
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'bombero' %}">Integrantes</a>
+                    <a class="nav-link" href="{% url 'informacion' %}">Información</a>
                 </li>
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
@@ -192,7 +192,6 @@
     <br>
     <br>
     <br>
-
     <!---------- AQUI COMIENZA EL FORMULARIO DE POSTULACION ---------->
     <div class="container">
         <div class="row">
@@ -212,31 +211,35 @@
                             <div class="form_group" id="centrado">
                                 Rut: {{ form.rut }}
                             </div>
+                            <br>
                             <div class="form_group">
                                 Primer Nombre: {{ form.pnombre }}
                             </div>
-
+                            <br>
                             <div class="form_group">
-                                Segundo Nombre:{{ form.snombre }}
+                                Segundo Nombre: {{ form.snombre }}
                             </div>
+                            <br>
                             <div class="form_group">
-                                Apellido Paterno:{{ form.appaterno }}
+                                Apellido Paterno: {{ form.appaterno }}
                             </div>
+                            <br>
                             <div class="form_group">
-                                Apellido Materno:{{ form.apmaterno }}
+                                Apellido Materno: {{ form.apmaterno }}
                             </div>
+                            <br>
                             <div class="form_group">
                                 Edad: {{ form.edad }}
                             </div>
+                            <br>
                             <div class="form_group">
-                                Nivel Academico:{{ form.nivel }}
+                                Nivel Academico: {{ form.nivel }}
                             </div>
-
+                            <br>
                             <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
                             <input type="reset" class="btn btn-primary" id="limnpiar" value="Limpiar">
-
+                            <br>
                             <div id="error" class="alert alert-success" role="alert">
-
                                 {{ mensaje }}
                             </div>
                         </form>
@@ -246,10 +249,7 @@
         </div>
     </div>
 
-
     <!----------- AQUI TERMINA EL FORMULARIO DE POSTULACION---------->
-
-
     <br>
     <br>
     <br>

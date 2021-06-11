@@ -55,7 +55,7 @@
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'bombero' %}">Integrantes</a>
+                    <a class="nav-link" href="{% url 'informacion' %}">Información</a>
                 </li>
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
@@ -115,33 +115,39 @@
 
     <!------------- AQUI COMIENZA EL BODY ---------------->
 
-    <!--------- AQUI COMIENZA LA LISTA----------->
+
+
+
+    <!--------- AQUI COMIENZA LA LISTA DE POSTULANTES----------->
     <div class="row justify-content-center align-items-center centrado">
         <div class="col-auto">
             <div class="centrado">
                 <!-- partial:index.partial.html -->
                 <br>
-                <span><h3>Lista de integrantes de la compañia</h3></span>
+                <span><h3>Lista de Postulantes</h3></span>
             </div>
             <div class="list">
                 <ul>
                     <li>Rut</li>
                     <li>Nombre</li>
-                    <li>Celular</li>
-                    <li>Cargo</li>
-                    <li>Compañia</li>
-                    <li>Comuna</li>
-                    <li>Fecha de Ingreso</li>
+                    <li>Edad</li>
+                    <li>Nivel Academico</li>
+                    <li scope="col">Modificar</li>
+                    <li scope="col">Eliminar</li>
+
                 </ul>
-                {% for bom in personal %}
+                {% for bom in postulante %}
                 <ul>
-                    <li data-label="Rut">{{bom.rut}}-{{bom.dv}} </li>
+                    <li data-label="Rut">{{bom.rut}} </li>
                     <li data-label="Nombre">{{bom.pnombre}} {{bom.snombre}} {{bom.appaterno}} {{bom.apmaterno}}</li>
-                    <li data-label="fono">{{bom.fono}}</li>
-                    <li data-label="Cargo">{{bom.cargo}}</li>
-                    <li data-label="Compañia">{{bom.compania}}</li>
-                    <li data-label="Comuna">{{bom.comuna}}</li>
-                    <li data-label="Fecha de Ingreso">{{bom.fecha_ing}}</li>
+                    <li data-label="Edad">{{bom.edad}}</li>
+                    <li data-label="Nivel Academico">{{bom.nivel}}</li>
+                    <li data-label="Modificar Postulante">
+                        <a href="{% url 'editar' bom.rut %}"><img src="{% static 'appweb/favicon/editar.png' %}" alt=""></a>
+                    </li>
+                    <li data-label="Eliminar Postulante">
+                        <a href="{% url 'eliminar' bom.rut %}"><img src="{% static 'appweb/favicon/eliminar.png' %}" alt=""></a>
+                    </li>
                 </ul>
                 {% endfor %}
                 <br>
@@ -149,7 +155,7 @@
             <!-- partial -->
         </div>
     </div>
-    <!------------------------- TERMINO DE LA LISTA --------------------->
+    <!------------------------- TERMINO DE LA LISTA DE POSTULANTES --------------------->
 
 
     <!----------- AQUI TERMINA EL FORMULARIO DE PERSONAL---------->

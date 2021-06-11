@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Modificar Personal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -27,15 +29,12 @@
             <form method="post" action="" id="formulario">
                 <br> {% csrf_token %}
                 <div class="form_group">
-
                     {{ form.as_table }}
-
                 </div>
-                <input type="submit" class="btn btn-danger" id="enviar" href="{% url 'editarAlumnos' %}" value="Modificar">
+                <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
                 <input type="reset" class="btn btn-primary" id="limnpiar" value="Limpiar">
 
                 <div id="error" class="alert alert-success" role="alert">
-
                     {{ mensaje }}
                 </div>
             </form>

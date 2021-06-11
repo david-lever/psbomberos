@@ -1,9 +1,10 @@
-from django.shortcuts import render
-from .models import Personal
+from django.shortcuts import render, redirect
+from .models import Personal, Postulante
 from .forms import PostulanteForm, PersonalForm
 
 # Create your views here.
 
+#FORMULARIO DE POSTULANTES
 def home(request):
     datos = {
         'form' : PostulanteForm()
@@ -12,29 +13,58 @@ def home(request):
         formulario = PostulanteForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            datos['mensaje'] = 'Guardado Correctamente'
+            datos['mensaje'] = 'Los Datos de la Postulación se guardaron Correctamente'
     return render(request, 'appweb/index.html',datos)
 
-
+#MUESTRA LA PAGINA HISTORIA
 def historia(request):
     return render(request, 'appweb/historia.html')
 
-
+#MUESTRA LA PAGINA GALERIA Y LA LISTA DEL PERSONAL
 def galeria(request):
     return render(request, 'appweb/galeria.html')
 
 
+#MUESTRA LA PAGINA CONTACTO
 def contacto(request):
-    return render(request, 'appweb/contacto.html')
-
-
-def bombero(request):
     listaPersonal = Personal.objects.all()
-
     datos = {
-        'personal':listaPersonal
+        'personal':listaPersonal,
+    }
+    return render(request, 'appweb/contacto.html',datos)
+
+
+#MUESTRA LA PAGINA INFORMACION Y LA LISTA DE CONCURSANTES
+def informacion(request):
+    listaConcursantes = Postulante.objects.all()
+    datos = {
+        'postulante': listaConcursantes,
     }
     return render(request, 'appweb/personal.html',datos)
+
+#MODIFICAR - ACTUALIZAR
+def editar(request, id):
+    postulante = Postulante.objects.get(rut=id)
+    
+    datos = {
+        'form': PostulanteForm(instance=postulante)
+    }
+
+    if(request.method == 'POST'):
+        formulario = PostulanteForm(data=request.POST, instance=postulante)
+        if formulario.is_valid():
+            formulario.save()
+            datos['mensaje'] = 'Los Datos Modificados se Guardaron correctamente'
+
+    return render(request,'appweb/modificarpersonal.html',datos)
+
+
+#ELIMINAR POSTULANTE    
+def eliminar(request, id):
+    postulante = Postulante.objects.get(rut=id)
+    postulante.delete()
+    return redirect(to='informacion')
+
 
 
 
