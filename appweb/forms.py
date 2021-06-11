@@ -7,7 +7,7 @@ class PostulanteForm(ModelForm):
         model = Postulante
         fields = ['rut', 'pnombre', 'snombre', 'appaterno', 'apmaterno', 'edad','nivel']
 
-#class PersonalForm():
-     #class Meta:
-        #model = Personal
-        #fields = ['rut', 'dv', 'pnombre', 'snombre', 'appaterno', 'apmaterno','cargo','compania', 'fono','comuna','fecha_ing']
+class PersonalForm():
+    class Meta:
+        model = Personal
+        fields = ['rut', 'dv', 'pnombre', 'snombre', 'appaterno', 'apmaterno','cargo','compania', 'fono','comuna','fecha_ing']

@@ -4,6 +4,7 @@ from .views import historia
 from .views import galeria
 from .views import contacto
 from .views import bombero
+#from .views import editar
 
 
 urlpatterns = [
@@ -12,4 +13,5 @@ urlpatterns = [
     path('galeria', galeria, name="galeria"),
     path('contacto', contacto, name="contacto"),
     path('integrantes', bombero, name="bombero"),
+    #path('modificarPersonal/<id>', editar, name="editarAlumnos"),
 ]

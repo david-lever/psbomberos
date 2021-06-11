@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import Personal
-from .forms import PostulanteForm
-
-#PersonalForm
+from .forms import PostulanteForm, PersonalForm
 
 # Create your views here.
 
@@ -16,6 +14,7 @@ def home(request):
             formulario.save()
             datos['mensaje'] = 'Guardado Correctamente'
     return render(request, 'appweb/index.html',datos)
+
 
 def historia(request):
     return render(request, 'appweb/historia.html')
@@ -31,7 +30,11 @@ def contacto(request):
 
 def bombero(request):
     listaPersonal = Personal.objects.all()
+
     datos = {
         'personal':listaPersonal
     }
     return render(request, 'appweb/personal.html',datos)
+
+
+
