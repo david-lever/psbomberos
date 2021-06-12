@@ -14,6 +14,8 @@ def home(request):
         if formulario.is_valid():
             formulario.save()
             datos['mensaje'] = 'Los Datos de la Postulación se guardaron Correctamente'
+        else:
+            datos['mensaje'] = 'ERROR. Postulante Ya Registrado en el Sistema.'
     return render(request, 'appweb/index.html',datos)
 
 #MUESTRA LA PAGINA HISTORIA
@@ -55,7 +57,7 @@ def editar(request, id):
         if formulario.is_valid():
             formulario.save()
             datos['mensaje'] = 'Los Datos Modificados se Guardaron correctamente'
-
+        
     return render(request,'appweb/modificarpersonal.html',datos)
 
 

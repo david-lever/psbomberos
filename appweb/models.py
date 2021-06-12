@@ -30,7 +30,7 @@ class Comuna(models.Model):
 
 #PERONAL - BOMBEROS
 class Personal(models.Model):
-    rut = models.IntegerField(max_length=8,primary_key=True, verbose_name='Rut')
+    rut = models.IntegerField(primary_key=True, verbose_name='Rut')
     dv = models.CharField(max_length=1, verbose_name='Dígito verificador')
     pnombre = models.CharField(max_length=25, verbose_name='Primer nombre')
     snombre = models.CharField(null=True, blank=True, max_length=25, verbose_name='Segundo nombre')
@@ -55,12 +55,12 @@ class NivelAcademico(models.Model):
         return self.nivelAcademico
 
 class Postulante(models.Model):
-    rut = models.IntegerField(max_length=9,primary_key=True, verbose_name='Rut')
+    rut = models.IntegerField(primary_key=True, verbose_name='Rut')
     pnombre = models.CharField(max_length=25, verbose_name='Primer nombre')
     snombre = models.CharField(null=True, blank=True, max_length=25, verbose_name='Segundo nombre')
     appaterno = models.CharField(max_length=25, verbose_name='Apellido paterno')
     apmaterno = models.CharField(max_length=25, verbose_name='Apellido materno')
-    edad = models.IntegerField(max_length=2, verbose_name='Edad')
+    edad = models.IntegerField(verbose_name='Edad')
     nivel = models.ForeignKey(NivelAcademico, on_delete=models.CASCADE, verbose_name='Nivel Academico')
     
     def __str__(self):
