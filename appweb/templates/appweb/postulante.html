@@ -43,7 +43,7 @@
                     <a class="nav-link" href="{% url 'home' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'historia' %}l">Historia</a>
+                    <a class="nav-link" href="{% url 'historia' %}">Historia</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}#nosotros">Nosotros</a>
@@ -55,7 +55,7 @@
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'informacion' %}">Información</a>
+                    <a class="nav-link" href="{% url 'postulante' %}">Postulantes</a>
                 </li>
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
@@ -143,10 +143,10 @@
                     <li data-label="Edad">{{bom.edad}}</li>
                     <li data-label="Nivel Academico">{{bom.nivel}}</li>
                     <li data-label="Modificar Postulante">
-                        <a href="{% url 'editar' bom.rut %}"><img src="{% static 'appweb/favicon/editar.png' %}" alt=""></a>
+                        <a href="{% url 'editar' bom.rut %}"><img src="{% static 'appweb/favicon/editar1.png' %}" alt=""></a>
                     </li>
                     <li data-label="Eliminar Postulante">
-                        <a href="{% url 'eliminar' bom.rut %}"><img src="{% static 'appweb/favicon/eliminar.png' %}" alt=""></a>
+                        <a href="{% url 'eliminar' bom.rut %}"><img src="{% static 'appweb/favicon/eliminar1.png' %}" alt=""></a>
                     </li>
                 </ul>
                 {% endfor %}

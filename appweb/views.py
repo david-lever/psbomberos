@@ -36,13 +36,13 @@ def contacto(request):
     return render(request, 'appweb/contacto.html',datos)
 
 
-#MUESTRA LA PAGINA INFORMACION Y LA LISTA DE CONCURSANTES
-def informacion(request):
+#MUESTRA LA PAGINA INFORMACION Y LA LISTA DE POSTULANTES
+def postulante(request):
     listaConcursantes = Postulante.objects.all()
     datos = {
         'postulante': listaConcursantes,
     }
-    return render(request, 'appweb/personal.html',datos)
+    return render(request, 'appweb/postulante.html',datos)
 
 #MODIFICAR - ACTUALIZAR
 def editar(request, id):
