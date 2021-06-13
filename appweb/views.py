@@ -38,9 +38,9 @@ def contacto(request):
 
 #MUESTRA LA PAGINA INFORMACION Y LA LISTA DE POSTULANTES
 def postulante(request):
-    listaConcursantes = Postulante.objects.all()
+    listaPostulantes = Postulante.objects.all()
     datos = {
-        'postulante': listaConcursantes,
+        'postulante': listaPostulantes,
     }
     return render(request, 'appweb/postulante.html',datos)
 
