@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Modificar Personal</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <!-------------- MODIFICAR ------------------->
+    <div class="row justify-content-center align-items-center centrado">
+        <div class="col-md-6">
+            <h3>Si quieres ser parte de nuestro equipo deja tus datos en el siguiente formulario</h3>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="row justify-content-center align-items-center centrado">
+        <div class="col-11">
+            <form method="post" action="" id="formulario">
+                <br> {% csrf_token %}
+                <div class="form_group">
+                    {{ form.as_table }}
+                </div>
+                <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
+                <input type="reset" class="btn btn-primary" id="limnpiar" value="Limpiar">
+
+                <div id="error" class="alert alert-success" role="alert">
+                    {{ mensaje }}
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--------------- TERMINO MODIFICAR ---------------------->
+
+    <script src="ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+</body>
+
+</html>
