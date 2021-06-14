@@ -57,6 +57,7 @@ def editar(request, id):
         if formulario.is_valid():
             formulario.save()
             datos['mensaje'] = 'Los Datos Modificados se Guardaron correctamente'
+            return redirect(to='postulante')
         
     return render(request,'appweb/modificarpersonal.html',datos)
 
@@ -65,7 +66,7 @@ def editar(request, id):
 def eliminar(request, id):
     postulante = Postulante.objects.get(rut=id)
     postulante.delete()
-    return redirect(to='informacion')
+    return redirect(to='postulante')
 
 
 
