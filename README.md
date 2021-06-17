@@ -11,3 +11,8 @@
   - [x] Creación de la app
   - [x] Creación de la DB
   - [x] Creación del mantenedor
+- [ ] Creación e implementación del servicio REST
+  - [ ] Creación de la API
+  - [ ] Creación de los métodos GET, POST, PUT y DELETE
+  - [ ] Implementación de la API
+- [ ] Implementación de la seguridad en la API (Token authentication)
