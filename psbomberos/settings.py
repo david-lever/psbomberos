@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework.authtoken',
     'appweb',
+    'rest_postulante',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +78,17 @@ WSGI_APPLICATION = 'psbomberos.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+	'default': {
+	    'ENGINE': 'django.db.backends.oracle',
+	    'NAME': '127.0.0.1:1521/XEPDB1',
+	    'USER':'proyecto',
+	    'PASSWORD': 'proyecto',
+	    'TEST':{
+	        'USER':'default_test',
+	        'TBLSPACE':'default_test_tbls',
+	        'TBLSPACE_TMP':'default_test_tbls_tmp',
+	    },
+	},
 }
 
 
@@ -126,3 +136,8 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_ROOT = 'static'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
+]

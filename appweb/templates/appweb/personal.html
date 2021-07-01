@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en, es">
 
@@ -10,8 +9,9 @@
     <meta name="author" content="Esteban Salinas, Franco Carvallo, David Lever" />
     <meta name="description" content="Departamento de Bomberos de Chile: Institución nacional de Bomberos de Chile">
     <meta name="keywords" content="Bomberos, Bomberos de Chile, Cuerpo de Bomberos, Departamento de Bomberos, Incendio, Rescate">
+
     <link rel="icon" href="{% static 'appweb/favicon/favicon.png' %}">
-    <link type="text/css" rel="stylesheet" href="{% static 'appweb/css/stylecontacto.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'appweb/css/styleintegrantes.css' %}">
 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <title> Contacto | Bomberos de Chile</title>
+    <title> Integrantes | Bomberos de Chile</title>
 
 </head>
 
@@ -83,7 +83,7 @@
 
                 <!--IMAGEN 2-->
                 <div class="carousel-item">
-                    <img src="{% static 'appweb/img/img_carousel_02.jpg' %}" alt="Carousel Image">
+                    <img src="{% static 'appweb/img/img_carousel_02.jpg' %}">
                 </div>
 
                 <!--IMAGEN 3-->
@@ -113,125 +113,40 @@
 
 
     <!------------- AQUI COMIENZA EL BODY ---------------->
-    <br><br><br><br><br>
-    <div class="container">
-        <!------------ IMAGEN DE LA IZQUIERDA  -------------->
-        <div class="row">
-            <div class="col-md-6">
 
-                <br>
-                <br>
-                <br>
-                <h4 class="display-3">Manténgase en contacto</h4>
-                <p id="parrafo">Porque estar comunicados es importante, puede enviarnos un correo mediante el formulario que tenemos a disposición. Recuerda completar todos los espacios correctamente.
 
-            </div>
-            <!-- /.col-md-6 -->
-            <div class="col-md-6">
-                <div class="row align-items-center h-100">
-                    <div class="col">
-                        <div id="form-container">
-                            <h1>Contacto</h1>
-                            <form id="form" action="/success.html" method="GET" autocomplete="off">
-                                <p id="e71" class="warning">Por favor complete los campos a continuación.</p>
-                                <p id="e72" class="error">Por favor complete el formulario con información valida.</p>
 
-                                <label for="fullname">Nombre:</label>
-                                <input type="text" name="fullname" id="fullname" placeholder="Ingrese su Nombre (Nombre y Apellido)" class="field" /><i id="v1" class="far fa-check-circle"></i><i id="f1" class="far fa-times-circle"></i>
-                                <p id="e1" class="error">Por favor ingrese su nombre y apellido.</p>
 
-                                <label for="email">Correo:</label>
-                                <input type="email" name="email" id="email" placeholder="Correo electrónico." class="field" /><i id="v2" class="far fa-check-circle"></i><i id="f2" class="far fa-times-circle"></i>
-                                <p id="e2" class="error">Por favor ingrese un correo electrónico valido.</p>
-
-                                <label for="emailvalid">Confirmar correo:</label>
-                                <input type="email" name="emailconf" id="emailvalid" placeholder="Confirme su correo electronico" class="field" /><i id="v3" class="far fa-check-circle"></i><i id="f3" class="far fa-times-circle"></i>
-                                <p id="e31" class="error">El correo electrónico que escribió no coincide con el anterior.</p>
-                                <p id="e32" class="error">Por favor ingrese una dirección de correo electrónico válida.</p>
-
-                                <label for="phone">Celular:</label>
-                                <input type="tel" name="phone" id="phone" placeholder="Celular" class="field" /><i id="v4" class="far fa-check-circle"></i><i id="f4" class="far fa-times-circle"></i>
-                                <p id="e4" class="error">Por favor ingresa un numero valido. <i>Ej. +56 912345678</i></p>
-
-                                <label for="address">Asunto:</label>
-                                <input type="text" name="address" id="address" placeholder="Asunto" class="field" /><i id="v5" class="far fa-check-circle"></i><i id="f5" class="far fa-times-circle"></i>
-                                <p id="e5" class="error">Por favor ingresa un asunto. <i>Ej: Reclamo.</i></p>
-
-                                <label for="message">Mensaje:</label>
-                                <textarea id="message" placeholder="Escriba aquí  su mensaje..."></textarea>
-                                <p id="e6" class="warning">Máximo 250 Caracteres</p>
-                                <button class="btn" id="enviar" type="submit" value="submit">Enviar</button>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.col-md-6 -->
-
-        </div>
-        <br><br><br><br><br>
-        <!-- /.row -->
-
-        <!----------- IMAGEN A LA DERECHA --------------->
-        <div class="row">
-            <div class="col-lg-6">
-
-                <div class="row align-items-center h-100">
-                    <div class="col">
-                        <h4 class="display-3">Dirección de nuestro departamento</h4>
-                        <p class="lead">Puedes encontrarnos en: Merced #186, San Felipe, Valparaíso
-                        </p>
-
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.col-md-6 -->
-            <div class="col-lg-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13422.114706795825!2d-70.7258435!3d-32.7517038!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcdf5785d5f841067!2sCuerpo%20de%20Bomberos%20de%20San%20Felipe!5e0!3m2!1ses-419!2scl!4v1620091341092!5m2!1ses-419!2scl"
-                    width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <!-- /.col-md-6 -->
-
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <!--------- AQUI COMIENZA LA LISTA DEL PERSONAL----------->
+    <!--------- AQUI COMIENZA LA LISTA DE POSTULANTES----------->
     <div class="row justify-content-center align-items-center centrado">
         <div class="col-auto">
             <div class="centrado">
                 <!-- partial:index.partial.html -->
                 <br>
-                <span><h3>Lista de integrantes de la compañia</h3></span>
+                <span><h3>Lista de Postulantes</h3></span>
             </div>
             <div class="list">
                 <ul>
                     <li>Rut</li>
                     <li>Nombre</li>
-                    <li>Celular</li>
-                    <li>Cargo</li>
-                    <li>Compañia</li>
-                    <li>Comuna</li>
-                    <li>Fecha de Ingreso</li>
+                    <li>Edad</li>
+                    <li>Nivel Academico</li>
+                    <li scope="col">Modificar</li>
+                    <li scope="col">Eliminar</li>
+
                 </ul>
-                {% for per in personal %}
+                {% for bom in postulante %}
                 <ul>
-                    <li data-label="Rut">{{per.rut}}-{{per.dv}} </li>
-                    <li data-label="Nombre">{{bom.pnombre}} {{per.snombre}} {{per.appaterno}} {{per.apmaterno}}</li>
-                    <li data-label="fono">{{per.fono}}</li>
-                    <li data-label="Cargo">{{per.cargo}}</li>
-                    <li data-label="Compañia">{{per.compania}}</li>
-                    <li data-label="Comuna">{{per.comuna}}</li>
-                    <li data-label="Fecha de Ingreso">{{per.fecha_ing}}</li>
+                    <li data-label="Rut">{{bom.rut}} </li>
+                    <li data-label="Nombre">{{bom.pnombre}} {{bom.snombre}} {{bom.appaterno}} {{bom.apmaterno}}</li>
+                    <li data-label="Edad">{{bom.edad}}</li>
+                    <li data-label="Nivel Academico">{{bom.nivel}}</li>
+                    <li data-label="Modificar Postulante">
+                        <a href="{% url 'editar' bom.rut %}"><img src="{% static 'appweb/favicon/editar1.png' %}" alt=""></a>
+                    </li>
+                    <li data-label="Eliminar Postulante">
+                        <a href="{% url 'eliminar' bom.rut %}"><img src="{% static 'appweb/favicon/eliminar1.png' %}" alt=""></a>
+                    </li>
                 </ul>
                 {% endfor %}
                 <br>
@@ -239,8 +154,10 @@
             <!-- partial -->
         </div>
     </div>
-    <!------------------------- TERMINO DE LA LISTA DEL PERSONAL--------------------->
+    <!------------------------- TERMINO DE LA LISTA DE POSTULANTES --------------------->
 
+
+    <!----------- AQUI TERMINA EL FORMULARIO DE PERSONAL---------->
 
     <!------------- AQUI TERMINA EL BODY ----------------->
 
@@ -262,13 +179,16 @@
                 <div class="footer-bottom-site-credit"><span id="site-credit"></div>
             </div>
         </div>
-</footer>
+    </footer>
 <!----------------- AQUI TERMINA EL FOOTER ------------------>
 
     <!--SCRIPTS PARA EL FUNCIONAMIENTO DE LA PAGINA-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'appweb/js/scriptS1.js' %}"></script>
+    <script src="ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
     <script>
         $(document).ready(function() {
             $(".toggle-nav").click(function() {

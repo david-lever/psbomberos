@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <title> Galería | Bomberos de Chile</title>
 
@@ -42,13 +45,16 @@
                     <a class="nav-link" href="{% url 'historia' %}">Historia</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+                    <a class="nav-link" href="{% url 'home' %}#nosotros">Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'galeria' %}">Galería</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'postulante' %}">Postulantes</a>
                 </li>
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
@@ -139,7 +145,6 @@
         </div>
     </div>
     <!---------- TERMINO DEL PRIMER PARRAFO ------------->
-
 
     <!---------- INICIO DE LA GALERIA -------------------->
     <div class="rotatingGallery-parentContainer">
@@ -246,7 +251,6 @@
     </div>
     <br><br><br><br>
     <!------------- AQUI TERMINA EL BODY ----------------->
-
 
     <!------------- INICIO DEL FOOTER --------------------->
     <footer>
