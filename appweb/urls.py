@@ -6,7 +6,6 @@ from .views import contacto
 from .views import postulante
 from .views import editar
 from .views import eliminar
-from rest_postulante.views import lista_postulantes, detalle_postulante
 
 
 urlpatterns = [
@@ -17,6 +16,4 @@ urlpatterns = [
     path('postulantes', postulante, name="postulante"),
     path('modificarPostulante/<id>', editar, name="editar"),
     path('eliminarPostulante/<id>', eliminar, name="eliminar"),
-    path('lista_postulantes', lista_postulantes, name="lista_postulantes"),
-    path('detalle_postulante/<id>', detalle_postulante, name="detalle_postulante"),
 ]

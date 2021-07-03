@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'appweb',
     'rest_postulante',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+    'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'psbomberos.wsgi.application'
 
@@ -139,5 +146,33 @@ STATIC_ROOT = 'static'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend'
+    'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
 ]
+
+# Social auth backends setup
+
+#GitHub
+
+SOCIAL_AUTH_GITHUB_KEY = 'INSERT_PROVIDED_KEY_HERE'
+SOCIAL_AUTH_GITHUB_SECRET = 'INSERT_PROVIDED_SECRET_HERE'
+SOCIAL_AUTH_GITHUB_SCOPE = ['user:email']
+
+# Google OAuth 2.0
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'INSERT_PROVIDED_KEY_HERE'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'INSERT_PROVIDED_SECRET_HERE'
+
+# Twitter
+
+SOCIAL_AUTH_TWITTER_KEY = 'INSERT_PROVIDED_KEY_HERE'
+SOCIAL_AUTH_TWITTER_SECRET = 'INSERT_PROVIDED_SECRET_HERE'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
