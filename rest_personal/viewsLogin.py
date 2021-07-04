@@ -26,4 +26,4 @@ def login(request):
         return Response("Password incorrecta")  
 
     token, created = Token.objects.get_or_create(user=user)
-    return Response(token.key)  
+    return Response(token.key)

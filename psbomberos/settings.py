@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'appweb',
-    'rest_postulante',
+    'rest_personal',
     'social_django',
 ]
 
@@ -160,7 +160,7 @@ SOCIAL_AUTH_GITHUB_KEY = 'INSERT_PROVIDED_KEY_HERE'
 SOCIAL_AUTH_GITHUB_SECRET = 'INSERT_PROVIDED_SECRET_HERE'
 SOCIAL_AUTH_GITHUB_SCOPE = ['user:email']
 
-# Google OAuth 2.0
+# Google
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'INSERT_PROVIDED_KEY_HERE'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'INSERT_PROVIDED_SECRET_HERE'

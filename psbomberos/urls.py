@@ -21,7 +21,7 @@ from django.contrib.auth.views import logout
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('appweb.urls')),
-    path('api/', include('rest_postulante.urls')),
+    path('api/', include('rest_personal.urls')),
     path('', include('social_django.urls', namespace='social')),
     path('logout/', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
 ]

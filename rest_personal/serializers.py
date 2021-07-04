@@ -1,0 +1,8 @@
+from rest_framework import serializers
+from appweb.models import Personal
+
+
+class PersonalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Personal
+        fields = ['rut', 'dv', 'pnombre', 'snombre', 'appaterno', 'apmaterno', 'fono', 'fecha_ing', 'cargo', 'compania', 'comuna']
