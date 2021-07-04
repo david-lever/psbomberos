@@ -16,7 +16,7 @@
     - [ ] Creación de los métodos GET, POST, PUT y DELETE
     - [ ] Implementación de la función listar
     - [ ] Implementación de la API
-  - [ ] Consumir su propia API
+  - [ ] Consumir la REST API 
   - [ ] Implementación de la seguridad en la API 
     - [ ] Implementación del sistema de ingreso (Token authentication) 
     - [ ] Integración de red social en el sistema de ingreso (Google OAuth 2.0)
