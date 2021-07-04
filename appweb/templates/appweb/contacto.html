@@ -206,30 +206,30 @@
     <br>
 
     <!--------- AQUI COMIENZA LA LISTA DEL PERSONAL----------->
-    <div class="row justify-content-center align-items-center centrado">
-        <div class="col-auto">
-            <div class="centrado">
-                <!-- partial:index.partial.html -->
-                <br>
-                <span><h3>Lista de integrantes de la compañia</h3></span>
-            </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-auto col-sm-10 personal">
+            <br>
+            <h4 class="display-4 text-info">Lista de integrantes de la compañia</h4>
+        </div>
+    </div>
+
+    <div class="row justify-content-center align-items-center centrado" id="perso">
+        <div class="col-lg-auto pers">
             <div class="list">
                 <ul>
                     <li>Rut</li>
                     <li>Nombre</li>
                     <li>Celular</li>
                     <li>Cargo</li>
-                    <li>Compañia</li>
                     <li>Comuna</li>
                     <li>Fecha de Ingreso</li>
                 </ul>
                 {% for per in personal %}
                 <ul>
                     <li data-label="Rut">{{per.rut}}-{{per.dv}} </li>
-                    <li data-label="Nombre">{{bom.pnombre}} {{per.snombre}} {{per.appaterno}} {{per.apmaterno}}</li>
+                    <li data-label="Nombre">{{per.pnombre}} {{per.snombre}} {{per.appaterno}} {{per.apmaterno}}</li>
                     <li data-label="fono">{{per.fono}}</li>
                     <li data-label="Cargo">{{per.cargo}}</li>
-                    <li data-label="Compañia">{{per.compania}}</li>
                     <li data-label="Comuna">{{per.comuna}}</li>
                     <li data-label="Fecha de Ingreso">{{per.fecha_ing}}</li>
                 </ul>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Personal, Postulante
-from .forms import PostulanteForm, PersonalForm
+from .forms import PostulanteForm
 
 # Create your views here.
 
