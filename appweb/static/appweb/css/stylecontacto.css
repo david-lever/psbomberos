@@ -288,10 +288,7 @@ iframe {
     border-radius: 13px;
 }
 
-
-/* generic */
-
-.list ul :nth-child(odd) {
+.list ul:nth-child(odd) {
     background-color: #ddd;
 }
 
@@ -373,6 +370,12 @@ iframe {
 
 
 /********************************* TERMINO BODY ********************************/
+
+
+/***********EMPIEZA EL EFECTO DEL BUTTON*******************************/
+
+
+/************TERMINA EL EFECTO DEL BOTON ******************************/
 
 
 /********************************* SCROLL ***************************************/

@@ -10,6 +10,7 @@
     <meta name="author" content="Esteban Salinas, Franco Carvallo, David Lever" />
     <meta name="description" content="Departamento de Bomberos de Chile: Institución nacional de Bomberos de Chile">
     <meta name="keywords" content="Bomberos, Bomberos de Chile, Cuerpo de Bomberos, Departamento de Bomberos, Incendio, Rescate">
+
     <link rel="icon" href="{% static 'appweb/favicon/favicon.png' %}">
     <link type="text/css" rel="stylesheet" href="{% static 'appweb/css/stylecontacto.css' %}">
 
@@ -17,13 +18,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
 
     <!--LINKS PARA EL FUNCIONAMIENTO DE LA PAGINA-->
-    <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="boostrap.min.css">
 
     <title> Contacto | Bomberos de Chile</title>
 
@@ -205,40 +206,47 @@
     <br>
     <br>
 
-    <!--------- AQUI COMIENZA LA LISTA DEL PERSONAL----------->
-    <div class="row justify-content-center">
-        <div class="col-lg-auto col-sm-10 personal">
-            <br>
-            <h4 class="display-4 text-info">Lista de integrantes de la compañia</h4>
+    <!--------- AQUI COMIENZA LA API DEL PERSONAL ----------->
+    {% if request.user.is_authenticated and user.username == "admin" %}
+
+    <div class="container">
+        <div class="text-center">
+            <button onclick=location.href="{% url 'lista_personal' %}" class="btn round btn-primary btn-lg col-sm-1">API</button>
         </div>
+        <br>
     </div>
 
-    <div class="row justify-content-center align-items-center centrado" id="perso">
+
+    <div class="row justify-content-center align-items-center centrado">
         <div class="col-lg-auto pers">
-            <div class="list">
-                <ul>
-                    <li>Rut</li>
-                    <li>Nombre</li>
-                    <li>Celular</li>
-                    <li>Cargo</li>
-                    <li>Comuna</li>
-                    <li>Fecha de Ingreso</li>
-                </ul>
-                {% for per in personal %}
-                <ul>
-                    <li data-label="Rut">{{per.rut}}-{{per.dv}} </li>
-                    <li data-label="Nombre">{{per.pnombre}} {{per.snombre}} {{per.appaterno}} {{per.apmaterno}}</li>
-                    <li data-label="fono">{{per.fono}}</li>
-                    <li data-label="Cargo">{{per.cargo}}</li>
-                    <li data-label="Comuna">{{per.comuna}}</li>
-                    <li data-label="Fecha de Ingreso">{{per.fecha_ing}}</li>
-                </ul>
-                {% endfor %}
-                <br>
-            </div>
-            <!-- partial -->
+            <h3>Traer datos</h3>
+        </div>
+
+        <div class="row justify-content-center align-items-center centrado">
+            <button type="button" class="btn btn-primary col-lg-auto pers" id="enviar">Traer</button>
+        </div>
+
+
+        <div class="row">
+            <table class="table col-lg-auto pers" id="categorias">
+                <thead class="col-lg-auto pers">
+                    <tr class="col-lg-auto pers">
+                        <th scope="col">Rut</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Comuna</th>
+                        <th scope="col">Fecha de Ingreso</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+                </tbody>
+            </table>
         </div>
     </div>
+    {% endif %}
     <!------------------------- TERMINO DE LA LISTA DEL PERSONAL--------------------->
 
 
@@ -269,6 +277,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'appweb/js/scriptS1.js' %}"></script>
+    <script src="{% static 'appweb/js/api.js' %}"></script>
     <script>
         $(document).ready(function() {
             $(".toggle-nav").click(function() {

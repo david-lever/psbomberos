@@ -68,6 +68,12 @@ def eliminar(request, id):
     postulante.delete()
     return redirect(to='postulante')
 
+#mostrar api
+def mostrarApi(request):
+    personal = Postulante.objects.all()
+
+    return render(request, 'FasesProyecto/historia.html',personal)
+
 
 
 

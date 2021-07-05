@@ -132,8 +132,11 @@
                     <li>Nombre</li>
                     <li>Edad</li>
                     <li>Nivel Academico</li>
+                    {% if request.user.is_authenticated and user.username == "admin" %}
                     <li scope="col">Modificar</li>
+                    {% endif %} {% if request.user.is_authenticated and user.username == "admin" %}
                     <li scope="col">Eliminar</li>
+                    {% endif %}
 
                 </ul>
                 {% for bom in postulante %}
@@ -142,12 +145,15 @@
                     <li data-label="Nombre">{{bom.pnombre}} {{bom.snombre}} {{bom.appaterno}} {{bom.apmaterno}}</li>
                     <li data-label="Edad">{{bom.edad}}</li>
                     <li data-label="Nivel Academico">{{bom.nivel}}</li>
+                    {% if request.user.is_authenticated and user.username == "admin" %}
                     <li data-label="Modificar Postulante">
                         <a href="{% url 'editar' bom.rut %}"><img src="{% static 'appweb/favicon/editar1.png' %}" alt=""></a>
                     </li>
+                    {% endif %} {% if request.user.is_authenticated and user.username == "admin" %}
                     <li data-label="Eliminar Postulante">
                         <a href="{% url 'eliminar' bom.rut %}"><img src="{% static 'appweb/favicon/eliminar1.png' %}" alt=""></a>
                     </li>
+                    {% endif %}
                 </ul>
                 {% endfor %}
                 <br>
