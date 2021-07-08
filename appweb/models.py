@@ -2,15 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-#COMPAÑIA DE BOMBERO
-class Compania(models.Model):
-    idCompania = models.IntegerField(primary_key=True, verbose_name='ID Compañia')
-    nomComp = models.CharField(max_length=35, verbose_name='Nombre Compañía')
-
-    def __str__(self):
-        return self.nomComp
-
-
 #CARGO DE BOMBERO
 class Cargo(models.Model):
     idCargo = models.CharField(max_length=3,primary_key=True, verbose_name='ID Cargo')
@@ -39,7 +30,6 @@ class Personal(models.Model):
     fono = models.IntegerField(verbose_name='Teléfono')
     fecha_ing = models.DateField(verbose_name='Fecha Ingreso')
     cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE)
-    compania = models.ForeignKey(Compania, on_delete=models.CASCADE)
     comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)
 
     def __str__(self):

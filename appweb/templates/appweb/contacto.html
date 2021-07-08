@@ -10,6 +10,7 @@
     <meta name="author" content="Esteban Salinas, Franco Carvallo, David Lever" />
     <meta name="description" content="Departamento de Bomberos de Chile: Institución nacional de Bomberos de Chile">
     <meta name="keywords" content="Bomberos, Bomberos de Chile, Cuerpo de Bomberos, Departamento de Bomberos, Incendio, Rescate">
+
     <link rel="icon" href="{% static 'appweb/favicon/favicon.png' %}">
     <link type="text/css" rel="stylesheet" href="{% static 'appweb/css/stylecontacto.css' %}">
 
@@ -17,13 +18,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mulish&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
 
     <!--LINKS PARA EL FUNCIONAMIENTO DE LA PAGINA-->
-    <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="boostrap.min.css">
 
     <title> Contacto | Bomberos de Chile</title>
 
@@ -53,9 +54,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
+                {% if request.user.is_authenticated and user.username == "admin" %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'postulante' %}">Postulantes</a>
+                    <a class="nav-link" href="{% url 'postulante' %}">Admin</a>
                 </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
                 <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/BomberosCL/"><i class="fab fa-facebook-f"></i></a></li>
@@ -205,40 +208,7 @@
     <br>
     <br>
 
-    <!--------- AQUI COMIENZA LA LISTA DEL PERSONAL----------->
-    <div class="row justify-content-center align-items-center centrado">
-        <div class="col-auto">
-            <div class="centrado">
-                <!-- partial:index.partial.html -->
-                <br>
-                <span><h3>Lista de integrantes de la compañia</h3></span>
-            </div>
-            <div class="list">
-                <ul>
-                    <li>Rut</li>
-                    <li>Nombre</li>
-                    <li>Celular</li>
-                    <li>Cargo</li>
-                    <li>Compañia</li>
-                    <li>Comuna</li>
-                    <li>Fecha de Ingreso</li>
-                </ul>
-                {% for per in personal %}
-                <ul>
-                    <li data-label="Rut">{{per.rut}}-{{per.dv}} </li>
-                    <li data-label="Nombre">{{bom.pnombre}} {{per.snombre}} {{per.appaterno}} {{per.apmaterno}}</li>
-                    <li data-label="fono">{{per.fono}}</li>
-                    <li data-label="Cargo">{{per.cargo}}</li>
-                    <li data-label="Compañia">{{per.compania}}</li>
-                    <li data-label="Comuna">{{per.comuna}}</li>
-                    <li data-label="Fecha de Ingreso">{{per.fecha_ing}}</li>
-                </ul>
-                {% endfor %}
-                <br>
-            </div>
-            <!-- partial -->
-        </div>
-    </div>
+
     <!------------------------- TERMINO DE LA LISTA DEL PERSONAL--------------------->
 
 
@@ -269,6 +239,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'appweb/js/scriptS1.js' %}"></script>
+    <script src="{% static 'appweb/js/api.js' %}"></script>
     <script>
         $(document).ready(function() {
             $(".toggle-nav").click(function() {

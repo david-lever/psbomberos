@@ -6,6 +6,9 @@ from .views import contacto
 from .views import postulante
 from .views import editar
 from .views import eliminar
+from .views import register_request
+from .views import login_request
+from .views import logout_request
 
 
 urlpatterns = [
@@ -16,4 +19,7 @@ urlpatterns = [
     path('postulantes', postulante, name="postulante"),
     path('modificarPostulante/<id>', editar, name="editar"),
     path('eliminarPostulante/<id>', eliminar, name="eliminar"),
+    path("register", register_request, name="register"),
+    path("login", login_request, name="login"),
+    path("logout", logout_request, name= "logout"),
 ]

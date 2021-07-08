@@ -26,7 +26,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <title> Integrantes | Bomberos de Chile</title>
+    <title> Postulantes | Bomberos de Chile</title>
 
 </head>
 
@@ -55,7 +55,7 @@
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'postulante' %}">Postulantes</a>
+                    <a class="nav-link" href="{% url 'postulante' %}">Admin</a>
                 </li>
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
@@ -135,6 +135,7 @@
                     <li scope="col">Modificar</li>
                     <li scope="col">Eliminar</li>
 
+
                 </ul>
                 {% for bom in postulante %}
                 <ul>
@@ -142,12 +143,15 @@
                     <li data-label="Nombre">{{bom.pnombre}} {{bom.snombre}} {{bom.appaterno}} {{bom.apmaterno}}</li>
                     <li data-label="Edad">{{bom.edad}}</li>
                     <li data-label="Nivel Academico">{{bom.nivel}}</li>
+
                     <li data-label="Modificar Postulante">
                         <a href="{% url 'editar' bom.rut %}"><img src="{% static 'appweb/favicon/editar1.png' %}" alt=""></a>
                     </li>
+
                     <li data-label="Eliminar Postulante">
                         <a href="{% url 'eliminar' bom.rut %}"><img src="{% static 'appweb/favicon/eliminar1.png' %}" alt=""></a>
                     </li>
+
                 </ul>
                 {% endfor %}
                 <br>
@@ -156,7 +160,36 @@
         </div>
     </div>
     <!------------------------- TERMINO DE LA LISTA DE POSTULANTES --------------------->
+    <!--------- AQUI COMIENZA LA API DEL PERSONAL ----------->
 
+    <div class="row justify-content-center align-items-center centrado">
+        <button type="button" class="btn btn-primary col-lg-auto pers " id="enviar">Traer Datos de API</button>
+        <div class="text-center">
+            <button onclick=location.href="{% url 'lista_personal' %}" class="btn btn-danger col-lg-auto pers margin-left">Mostrar Json</button>
+        </div>
+        <br>
+    </div>
+
+
+    <div class="justify-content-center align-items-center centrado">
+        <table class="table col-auto pers" id="categorias">
+            <thead class="col-auto pers">
+                <tr class="col-auto pers">
+                    <th scope="col">Rut</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Comuna</th>
+                    <th scope="col">Fecha de Ingreso</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            </tbody>
+        </table>
+    </div>
+    </div>
 
     <!----------- AQUI TERMINA EL FORMULARIO DE PERSONAL---------->
 
@@ -190,6 +223,7 @@
     <script src="ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
     <script src="cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
     <script src="maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="{% static 'appweb/js/api.js' %}"></script>
     <script>
         $(document).ready(function() {
             $(".toggle-nav").click(function() {

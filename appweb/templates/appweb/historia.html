@@ -51,9 +51,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
+                {% if request.user.is_authenticated and user.username == "admin" %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'postulante' %}">Postulante</a>
+                    <a class="nav-link" href="{% url 'postulante' %}">Admin</a>
                 </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
                 <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/BomberosCL/"><i class="fab fa-facebook-f"></i></a></li>
@@ -111,41 +113,52 @@
 
 
     <!------------- AQUI COMIENZA EL BODY ---------------->
-    <section class="content">
-        <h1>Historia</h1>
-        <br>
-        <p>San Felipe en 1883 era la capital de la antigua provincia de Aconcagua, cuyo territorio se extendía por el norte hasta el rió Choapa, ciudad pujante y progresiva, con marcado desarrollo cultural y cívico.</p>
-        <p>La plaza de la independencia, hoy llamada de armas, había sido recién arbolada y adornada con hermosos jardines, las 4 estatuas y ocho jarrones de mármol blanco, y dos gigantescos leones de mármol lucían hermosos en contorno a su paseo del centro.</p>
-        <p>En ese paseo del centro de la plaza las juventudes jugaban elegantemente a la chaya y se regalaban tarjetas con flores secas.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="content">
+                    <h1>Historia</h1>
+                    <br>
+                    <p>San Felipe en 1883 era la capital de la antigua provincia de Aconcagua, cuyo territorio se extendía por el norte hasta el rió Choapa, ciudad pujante y progresiva, con marcado desarrollo cultural y cívico.</p>
+                    <p>La plaza de la independencia, hoy llamada de armas, había sido recién arbolada y adornada con hermosos jardines, las 4 estatuas y ocho jarrones de mármol blanco, y dos gigantescos leones de mármol lucían hermosos en contorno a su paseo
+                        del centro.
+                    </p>
+                    <p>En ese paseo del centro de la plaza las juventudes jugaban elegantemente a la chaya y se regalaban tarjetas con flores secas.</p>
 
-        <p>La música, la danza y la pintura son la gran atracción de esos tiempos.</p>
-        <img /><img src="{% static 'appweb/img/img_history_04.jpg' %}" class="fr" height="300" width="300" />
-        <p>Por su parte San Felipe goza de un gran auge con la industria, El comercio, la minería y la floreciente agricultura.</p>
+                    <p>La música, la danza y la pintura son la gran atracción de esos tiempos.</p>
+                    <img /><img src="{% static 'appweb/img/img_history_04.jpg' %}" class="fr" height="300" width="300" />
+                    <p>Por su parte San Felipe goza de un gran auge con la industria, El comercio, la minería y la floreciente agricultura.</p>
 
-        <p>Las calles céntricas recién contaban con agua potable y la iluminación publica se hacia por medio de lámparas a parafina. Y los municipales prohibían las peleas de gallos por considerarlas inmorales.</p>
+                    <p>Las calles céntricas recién contaban con agua potable y la iluminación publica se hacia por medio de lámparas a parafina. Y los municipales prohibían las peleas de gallos por considerarlas inmorales.</p>
 
-        <p>Mientras así transcurría la vida en la siempre heroica ciudad de San Felipe de Aconcagua, algunos de sus hijos se enrolaron en la Guerra del pacifico, luchaban y morían en tierras lejanas, había preocupación por ellos y se añoraba su regreso a
-            la patria, con honores y medallas.</p>
+                    <p>Mientras así transcurría la vida en la siempre heroica ciudad de San Felipe de Aconcagua, algunos de sus hijos se enrolaron en la Guerra del pacifico, luchaban y morían en tierras lejanas, había preocupación por ellos y se añoraba
+                        su regreso a la patria, con honores y medallas.</p>
 
-        <p>Aquella guerra desarrollaba un gran espíritu de servicio, de sacrifico, de unidad nacional. Cada cual quería aportar algo a Chile. La juventud es la que mas encarna esos deseos de servir a la patria…Sin duda, aquel espíritu tuvo muchísima importancia
-            en la fundación del benemérito Cuerpo de Bomberos de San Felipe.</p>
+                    <p>Aquella guerra desarrollaba un gran espíritu de servicio, de sacrifico, de unidad nacional. Cada cual quería aportar algo a Chile. La juventud es la que mas encarna esos deseos de servir a la patria…Sin duda, aquel espíritu tuvo muchísima
+                        importancia en la fundación del benemérito Cuerpo de Bomberos de San Felipe.</p>
 
-        <p>En Santiago el 8 de diciembre de 1863, a raíz del gran incendio de la iglesia de la compañía, se organiza el Cuerpo de Bomberos de Santiago. Aquella inmensa tragedia, con 2000 victimas, tuvo especial repercusión en San Felipe pues mueren tres
-            damas vinculadas a distinguidas familias, doña Rosa Portus Traslaviña, y sus dos hijas Digna Rosa y Juana Rosa. El doctor Ezequiel Tapia Portus, desolado por la perdida de su madre y hermanas encabeza las primeras diligencias para organizar
-            el Cuerpo de Bomberos de San Felipe, tomando contacto con Moisés del Fierro, residente en San Felipe y Bombero de la 2 CIA de Santiago, verdadero héroe nacional, que lucho mano a mano contra el fuego en el incendio de la compañía siendo uno
-            de los pocos que logro rescatar a sobrevivientes. Al poco tiempo de iniciada la organización se reúnen los fondos para la compra de nuestra primera bomba, accionada mediante un sistema de palancas por fuerza humana, que hoy goza ser un verdadero
-            patrimonio de la ciudad, estando aun en perfectas condiciones de funcionamiento. Al poco tiempo de nacido, Cuerpo de Bomberos hereda toda la sapiencia de sus antecesores Valparaíso y Santiago, siendo la cuna de los Bomberos de Aconcagua y
-            uno de los más antiguos de Chile.</p>
-        <p>Un pasado, presente y futuro que se basa en tres conceptos propios de nuestra actividad.</p>
-        <p>DEMOCRACIA: permanente durante toda nuestra vida institucional.</p>
+                    <p>En Santiago el 8 de diciembre de 1863, a raíz del gran incendio de la iglesia de la compañía, se organiza el Cuerpo de Bomberos de Santiago. Aquella inmensa tragedia, con 2000 victimas, tuvo especial repercusión en San Felipe pues
+                        mueren tres damas vinculadas a distinguidas familias, doña Rosa Portus Traslaviña, y sus dos hijas Digna Rosa y Juana Rosa. El doctor Ezequiel Tapia Portus, desolado por la perdida de su madre y hermanas encabeza las primeras diligencias
+                        para organizar el Cuerpo de Bomberos de San Felipe, tomando contacto con Moisés del Fierro, residente en San Felipe y Bombero de la 2 CIA de Santiago, verdadero héroe nacional, que lucho mano a mano contra el fuego en el incendio
+                        de la compañía siendo uno de los pocos que logro rescatar a sobrevivientes. Al poco tiempo de iniciada la organización se reúnen los fondos para la compra de nuestra primera bomba, accionada mediante un sistema de palancas por
+                        fuerza humana, que hoy goza ser un verdadero patrimonio de la ciudad, estando aun en perfectas condiciones de funcionamiento. Al poco tiempo de nacido, Cuerpo de Bomberos hereda toda la sapiencia de sus antecesores Valparaíso y
+                        Santiago, siendo la cuna de los Bomberos de Aconcagua y uno de los más antiguos de Chile.</p>
+                    <p>Un pasado, presente y futuro que se basa en tres conceptos propios de nuestra actividad.</p>
+                    <p>DEMOCRACIA: permanente durante toda nuestra vida institucional.</p>
 
-        <p>AUTONOMÍA: capaz de responsablemente tomar nuestras propias decisiones, auto fiscalizándonos. Velando por los principios éticos y morales impulsados por nuestros fundadores.</p>
+                    <p>AUTONOMÍA: capaz de responsablemente tomar nuestras propias decisiones, auto fiscalizándonos. Velando por los principios éticos y morales impulsados por nuestros fundadores.</p>
 
-        <p>EFICIENCIA: Con los más modestos recursos los bomberos a través de los años, hemos demostrado una capacidad de administración, y generación de fondos, bajo estrictas reglas de disciplina y constancia</p>
+                    <p>EFICIENCIA: Con los más modestos recursos los bomberos a través de los años, hemos demostrado una capacidad de administración, y generación de fondos, bajo estrictas reglas de disciplina y constancia</p>
 
-        <p> Un pasado lleno de gloria, basado en la guerra de la paz, de la solidaridad, del amor al prójimo, al desconocido, sin esperar recompensa alguna, y sin hacer distingos de ninguna especie., aquí todos son iguales por la sola condición de existir.</p>
-        </p>
-    </section>
+                    <p> Un pasado lleno de gloria, basado en la guerra de la paz, de la solidaridad, del amor al prójimo, al desconocido, sin esperar recompensa alguna, y sin hacer distingos de ninguna especie., aquí todos son iguales por la sola condición
+                        de existir.
+                    </p>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
     <!------------- AQUI TERMINA EL BODY ----------------->
 
 
