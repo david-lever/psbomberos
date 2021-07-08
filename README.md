@@ -11,12 +11,12 @@
   - [x] Creación de la app
   - [x] Creación de la DB
   - [x] Creación del mantenedor
-  - [ ] Creación e implementación del CRUD de la API
-    - [ ] Creación de la API
-    - [ ] Creación de los métodos GET, POST, PUT y DELETE
-    - [ ] Implementación de la función listar
-    - [ ] Implementación de la API
-  - [ ] Consumir la REST API 
+  - [x] Creación e implementación del CRUD de la API
+    - [x] Creación de la API
+    - [x] Creación de los métodos GET, POST, PUT y DELETE
+    - [x] Implementación de la función listar
+    - [x] Implementación de la API
+  - [x] Consumir la REST API 
   - [ ] Implementación de la seguridad en la API 
     - [ ] Implementación del sistema de ingreso (Token authentication) 
     - [ ] Integración de red social en el sistema de ingreso (Google OAuth 2.0)
