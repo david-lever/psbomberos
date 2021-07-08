@@ -54,9 +54,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
+                {% if request.user.is_authenticated and user.username == "admin" %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'postulante' %}">Postulantes</a>
+                    <a class="nav-link" href="{% url 'postulante' %}">Admin</a>
                 </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
                 <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/BomberosCL/"><i class="fab fa-facebook-f"></i></a></li>
@@ -206,47 +208,7 @@
     <br>
     <br>
 
-    <!--------- AQUI COMIENZA LA API DEL PERSONAL ----------->
-    {% if request.user.is_authenticated and user.username == "admin" %}
 
-    <div class="container">
-        <div class="text-center">
-            <button onclick=location.href="{% url 'lista_personal' %}" class="btn round btn-primary btn-lg col-sm-1">API</button>
-        </div>
-        <br>
-    </div>
-
-
-    <div class="row justify-content-center align-items-center centrado">
-        <div class="col-lg-auto pers">
-            <h3>Traer datos</h3>
-        </div>
-
-        <div class="row justify-content-center align-items-center centrado">
-            <button type="button" class="btn btn-primary col-lg-auto pers" id="enviar">Traer</button>
-        </div>
-
-
-        <div class="row">
-            <table class="table col-lg-auto pers" id="categorias">
-                <thead class="col-lg-auto pers">
-                    <tr class="col-lg-auto pers">
-                        <th scope="col">Rut</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Celular</th>
-                        <th scope="col">Cargo</th>
-                        <th scope="col">Comuna</th>
-                        <th scope="col">Fecha de Ingreso</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    {% endif %}
     <!------------------------- TERMINO DE LA LISTA DEL PERSONAL--------------------->
 
 

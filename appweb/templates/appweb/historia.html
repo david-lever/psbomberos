@@ -51,9 +51,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                 </li>
+                {% if request.user.is_authenticated and user.username == "admin" %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'postulante' %}">Postulante</a>
+                    <a class="nav-link" href="{% url 'postulante' %}">Admin</a>
                 </li>
+                {% endif %}
             </ul>
             <ul class="navbar-nav sm-icons mr-0">
                 <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/BomberosCL/"><i class="fab fa-facebook-f"></i></a></li>
