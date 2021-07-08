@@ -63,6 +63,11 @@
                 <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/bomberoschileoficial/?hl=es-la"><i class="fab fa-instagram"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="https://twitter.com/BomberosdeChile"><i class="fab fa-twitter"></i></a></li>
                 <li class="nav-item"><a class="nav-link" href="https://www.youtube.com/user/BomberosOnline"><i class="fab fa-youtube"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i></a></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i></a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
